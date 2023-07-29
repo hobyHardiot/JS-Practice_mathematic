@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../Code CSS/style.css">
+	<script src="../Code JS/jquery-3.6.0.min.js"></script>
+	<script src="../Code JS/js.js"></script>
+</head>
+<body>
+	<section style="perspective: 1000px;" >
+		<div class="container" id="card1">
+			<div class="face" style="display: flex;align-items: center;">
+				<h1 style="" align="center">Resolve equation of second degre </h1>
+			</div>
+			<div class="back">
+				<h1 style="position:relative">Enter your equation :</h1>
+				<form style="display: flex;justify-content: center;"> 
+					<input type="text" name="" id="scanf" placeholder="ax²+bx+c" style="transition: 2s">
+				</form>
+				<div>
+					<div style="position:absolute;top:60px;" class="elm">
+						<p id="delta"></p>
+						<p id="rcnDelta"></p>
+						<div id="solution">
+							<p id="x1"></p>
+							<p id="x2"></p>
+						</div>
+					</div>
+					<div id="alert">
+						<span style="height: 100%;background-color: #eb4a2d;border-radius: 5px;width: 30px;box-shadow:-2px 2px 3px rgba(0,0,0,.7);"><img src="../Outim/image/warning.png" height="100%"></span><span style="margin: 0 3px" id="txt">Format incorrect !</span>
+					</div>
+					<div onclick="script()"  id="btn1" style="height:  72px;position:relative;" class="btn1">
+						<p id="solve" class="bttn1">Find x</p>
+					</div>
+					<button id="rtr">Back</button>
+				</div>
+			</div>
+		</div>
+		<button  type="button" class="bttn2" onclick="relooad()" id="retour1">Back to menu</button>
+
+
+
+		<div class="container" id="card2">
+			<div class="face">
+				<h1 style="" align="center">Two unknow number with cramer's method</h1>
+			</div>
+			<div class="back" style="display: flex;flex-direction: column;align-items: center;">
+				<div style="display:flex;flex-direction: column;justify-content: center;align-items: center;padding: 100px;width: 500px;box-sizing: border-box;" id="cramerInput">
+					<div style="display: flex;flex-direction: row;height: 50px;width: 100%">
+						<input  type="number" name="" id="l0_c0"><p>x + </p>
+						<input  type="number" name="" id="l0_c1"><p>y = </p>
+						<input  type="number" name="" id="xx"><i>(1)</i>
+					</div>
+					<div style="display: flex;flex-direction: row;height: 50px;width: 100%">
+						<input  type="number" name="" id="l1_c0"><p>x + </p>
+						<input  type="number" name="" id="l1_c1"><p>y = </p>
+						<input  type="number" name="" id="yy"><i>(2)</i>
+					</div>	
+					<div id="alert1">
+						<span style="height: 100%;background-color: #eb4a2d;border-radius: 5px;width: 30px;box-shadow:-2px 2px 3px rgba(0,0,0,.7);"><img src="../Outim/warning.png" height="100%"></span><span style="margin: 0 3px" id="txt">Veuillez completer le champ !</span>
+					</div>						
+				</div>
+				<div id="solutionCramer">
+					<!-- DELTA PRINCIPAL -->
+					<div  id="deltPr"> 
+						<p class="sltn">••• DELTA principal</p>
+						<div style="display: flex;flex-direction: row;justify-content: center; ">
+							<p id="sltnCramer1">● (∆)  </p>
+							<div style="width:80px" id="dtrmn">
+								<div style=""  id="dtrmn1">
+									<div>
+										<p class="l0c0">a</p>
+										<p class="l1c0">b</p>
+									</div> 	
+									<div>	
+										<p class="l0c1">c</p>
+										<p class="l1c1">d</p>
+									</div> 
+								</div>
+							</div>	
+							<p id="sltnCramer2" style="margin-left: 10px;display: flex;"></p>
+							<p id="sltnCramer3" align="center" style="margin: 0"></p>
+						</div>
+						<p id="sltnCramer4" align="center" style="margin: 0;font-size: 15px"></p>
+					
+					</div>
+					<!-- *************************** -->
+					<div style="display: flex;flex-direction: row;justify-content: space-around;">
+						<!-- DELTA X --> 
+						<div style="width: 40%; " id="sX">
+							<p class="sltn">••• x</p>
+							<div style="display: flex;flex-direction: row;margin-left:  20px"> 
+								<p style="margin: 0;">x = </p>
+								<div style="width:80px">
+									<div >
+										<p style="margin: 0">(∆<sub>x</sub>)</p>
+									</div>
+									<hr width="75%">
+									<div >
+										<p style="margin: 0">(∆)</p>
+									</div>
+								</div>
+								<p style="margin-right: 5px ">=</p>
+								<div style="width:80px">
+									<div  style="display: flex;flex-direction: row;padding-bottom: 10px;border-right: solid 1px white;border-left: solid 1px white;margin-bottom: 2px">
+										<div>
+											<p style="height: 20px;width: 20px;margin: 0" class="xx l0c0">a</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="yy l1c0">b</p>
+										</div> 	
+										<div>	
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c1">c</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c1">d</p>
+										</div> 
+									</div>
+									<hr width="100%">
+									<div  style="display: flex;flex-direction: row;padding-bottom: 10px;border-right: solid 1px white;border-left: solid 1px white;margin-bottom: 2px">
+										<div>
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c0">a</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c0">b</p>
+										</div> 	
+										<div>	
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c1">c</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c1">d</p>
+										</div> 
+									</div>
+								</div>
+								<p id="sltnCramer2" style="margin-left: 10px"></p>
+							</div>						
+						</div> 
+						<!-- *************************** -->
+						<!-- DELTA Y --> 
+						<div style="width: 40%; " id="sY">
+							<p class="sltn">••• y</p>
+							<div style="display: flex;flex-direction: row;margin-left:  20px"> 
+								<p style="margin: 0;">y = </p>
+								<div style="width:80px">
+									<div >
+										<p style="margin: 0">(∆<sub>y</sub>)</p>
+									</div>
+									<hr width="75%">
+									<div >
+										<p style="margin: 0">(∆)</p>
+									</div>
+								</div>
+								<p style="margin-right: 5px ">=</p>
+								<div style="width:80px">
+									<div  style="display: flex;flex-direction: row;padding-bottom: 10px;border-right: solid 1px white;border-left: solid 1px white;margin-bottom: 2px">
+										<div>
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c0">a</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c0">b</p>
+										</div> 	
+										<div>	
+											<p style="height: 20px;width: 20px;margin: 0" class="xx l0c1">c</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="yy l1c1">d</p>
+										</div> 
+									</div>
+									<hr width="100%">
+									<div  style="display: flex;flex-direction: row;padding-bottom: 10px;border-right: solid 1px white;border-left: solid 1px white;margin-bottom: 2px">
+										<div>
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c0">a</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c0">b</p>
+										</div> 	
+										<div>	
+											<p style="height: 20px;width: 20px;margin: 0" class="l0c1">c</p>
+											<p style="height: 20px;width: 20px;margin: 0" class="l1c1">d</p>
+										</div> 
+									</div>
+								</div>
+								<p id="sltnCramer2" style="margin-left: 10px"></p>
+							</div>						
+						</div>
+						<!-- *************************** -->
+					</div> 
+						<!-- SOLUTION --> 	
+						<div style="display: none." align="center" class="solution">
+							<h3 id="solution" style="border-bottom: solid 4px white;width: 75%;margin-top: 60px">D'où x = <span id="solution1"></span> et y =<span id="solution2"></span></h3>
+						</div>
+						<!-- *************************** -->
+				</div>
+				<div>
+					<div onclick="cramer()" onclick="solution()" id="bttnCard2" style="position: relative;">
+						<p id="solve1">Find x and y</p>
+					</div>	
+				</div> 	
+				<button id="rtr1">Back</button>
+			</div>
+		</div>
+		<button id="retour2">Back to menu</button>
+
+
+		<div class="container" id="card3" onclick="affichCalque()">
+			<div class="face" >
+				<h1>PANNE ADS<br>(Layer manipulation)</h1>
+			</div>
+			<div class="back">
+				
+			</div>
+		</div>
+		<section id="panneauPub">
+			
+			<button onclick="plus(-1)" id="next" style="position: absolute;left: -100px">PREV</button>
+			<div class="container calque" id="moncalque1">
+			</div>
+			<div class="container calque" id="moncalque2">
+			</div>
+			<div class="container calque" id="moncalque3">
+			</div>
+			<div class="container calque" id="moncalque4">
+			</div>
+			<button onclick="plus(1)" id="prev" style="position: absolute;right: -100px">NEXT</button>
+		</section>
+		<button id="retour3">BACK TO MENU</button>
+
+	</section>
+<script src="../Code JS/pannPub.js">
+</script>
+</body>
+</html>
+

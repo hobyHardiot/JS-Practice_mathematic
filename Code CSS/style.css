@@ -1,0 +1,584 @@
+body{
+	margin: 0;
+	background-color: #2b2a33;
+	overflow-x: hidden;
+}
+section{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/*button#retour1{ 
+	position: relative;
+	bottom: -190px;
+	font-family: font1;
+	opacity: 0;
+	font-size: 1.5em;
+	border-radius: 5px;
+	height: 72px;
+	font-weight: 900;
+	background: none;
+	border: solid 2px rgba(255,255,255,.5);
+	color: rgba(255,255,255,.5);
+	cursor: pointer;
+	flex-wrap: nowrap;
+	width: 0;
+	transition: .5s;
+	letter-spacing: 2px;
+}
+button#retour1:hover{
+	background-color:  #2b2a33;
+	transition: .5s;
+}
+*/
+
+
+#card1,#card2,#card3,#retour1,#retour2,#retour3{
+	z-index: 10;
+}
+.container{
+	position: relative;
+	width:300px;
+	height:400px;
+	margin: 20px;
+	transform-style: preserve-3d;
+	transition: transform 0.6s;
+	border-radius: 15px;
+	cursor: pointer;
+	background-size: contain;
+	box-shadow: 3px 3px 7px black, -1px -2px 1px rgba(0,0,0,.3);
+}
+.face{
+	display: flex;align-items: center;
+}
+.face,.back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	top: 0;
+	transition: .5s;
+	border-radius: 15px;
+	overflow: hidden;
+}
+.back{
+	transform: rotateY(180deg);
+	border-radius:15px;
+	background-color:#1c1b21;
+	box-shadow:1px 1px 5px black;
+	cursor: default;
+}
+#card1{
+	background-image: url("../Outim/image/fórmula-cuadrático-23037876.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: flex;align-items: center;
+	position: relative;
+}
+.face:hover{
+	box-shadow: 3px 3px 15px black, -1px -2px 5px rgba(0,0,0,.3);
+	text-shadow: -5px 5px 5px black;
+	transition: .5s;
+}
+
+
+/*******************/
+.container .face h1{
+	color: white;
+	font-family:font1;
+	background-color: 	rgba(43, 42, 51,.7);
+	padding: 50px;font-size: 25px;
+	letter-spacing: 5px;
+	box-shadow: -5px -5px 5px black,5px 5px 5px black;
+}
+.container .back h1{
+	font-family: font2;
+	color: white;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 130px;
+}
+#card1 .back form input{
+	outline: none;
+	background: none;
+	border: none;
+	border-bottom: solid 0px white;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 30px;
+	box-shadow:2px 2px 5px rgba(0,0,0,.7);
+	background-color: #2b2a33;
+	width: 75%;
+	position: relative;border-radius: 5px;
+	margin-right: 0;
+	z-index: 100;
+}
+#card1 .back form input::placeholder{
+	color: white;
+	text-align: center;
+	font-style: italic;font-size: 16px;
+	font-weight: normal;
+}
+.container .back div{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container .back div .btn1,.container .back div .bttn2{
+	color:#00ddff;
+	border-radius:5px;
+	text-align: center;
+	font-size: 1.5em;
+	cursor: pointer;
+	border: none;
+	background: none;
+	border:  solid 1px #00ddff;
+	font-weight: 900;
+	box-sizing: border-box;
+	width: 50%;
+	font-family: font1;
+	margin-top: 50px;
+	transition: .5s;
+	height: auto;
+}
+.container .back div .bttn2{
+	width: 50%;color: #eff4ff;border: solid 1px #eff4ff;
+}
+.container .back div .btn1:hover{
+	color: #2b2a33;
+	background-color: #0df;
+	transition: .5s;
+}
+
+.container .back div #rtr{
+	position: absolute;
+	bottom: -30px;
+	opacity: 0;
+	font-family: font1;
+	width: 50%;
+	font-size: 1.5em;
+	border-radius: 5px;
+	padding: 10px;
+	height: 72px;
+	font-weight: 900;
+	background: none;
+	border: solid 2px rgba(255,255,255,.5);
+	color: rgba(255,255,255,.5);
+	cursor: pointer;
+}
+.container .back div .elm{
+	position: absolute;
+	padding-top: 40px;
+	top: 60px;
+}
+.container .back div .elm #delta,.container .back div .elm #rcnDelta{
+	position: relative;
+	font-family: font2;
+	font-size: 30px;
+	color: white;
+	margin: 0;
+	text-align: center;
+}
+
+.container .back div .elm #x1{
+	margin-right: 20px;
+		font-family: font2;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+.container .back div .elm #x2{
+	margin-left: 20px;
+		font-family: font2;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+	/*alert  */
+#alert,#alert1{
+	height: 30px;
+	background-color:#fcede8;
+	width: 75%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 5px 0;
+	font-family: font1;
+	border-radius:0 0 5px 5px;
+	z-index: -2;
+	position: relative;		
+	color: black;
+	opacity: 0;
+}
+#alert1{
+	height: 0;
+	font-size: 0;
+	padding: 0;
+	width:100%;
+}
+
+/****************CARD-2******************/
+#card2{
+	background-image: url("../Outim/image/fórmula-cuadrático-23037876.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#card2 .back #cramerInput{
+	font-size: 1.2em;
+	font-weight: 900;
+	font-family: font2;
+	color: white;
+	position: relative;
+	opacity: 0;
+	z-index: -5;
+}
+#card2 input{
+	width: 50px;
+	outline: none;
+	border: none;
+	border-bottom: solid 1px black;
+	outline: none;
+	background: none;
+	border: none;
+	border-bottom: solid 0px white;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+	box-shadow:2px 2px 5px rgba(0,0,0,.7);
+	background-color: #2b2a33;
+	position: relative;border-radius: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#card2 i{
+	font-weight: normal;
+	font-size: 15px;
+}
+#card2 .back #bttnCard2{
+	color:#00ddff;
+	border-radius:5px;
+	text-align: center;
+	font-size: 1.5em;
+	cursor: pointer;
+	border: none;
+	background: none;
+	border:  solid 1px #00ddff;
+	font-weight: 900;
+	box-sizing: border-box;
+	width: 50%;
+	font-family: font1;
+	transition: .5s;
+	height: 72px;
+	opacity: 0;
+}
+#card2 .back #bttnCard2:hover{
+	color: #2b2a33;
+	background-color: #0df;
+	transition: .5s;
+}
+#card2 .back #rtr1{
+	opacity: 0;
+	position: absolute;
+	bottom: -130px;
+	font-family: font2;
+	width: 50%;
+	font-size: 1.5em;
+	border-radius: 5px;
+	padding: 10px;
+	height: 72px;
+	font-weight: 900;
+	background: none;
+	border: solid 2px rgba(255,255,255,.5);
+	color: rgba(255,255,255,.5);
+	cursor: pointer;
+}
+#card2 .back #rtr1:hover{background-color:#52525e;}
+
+
+#card2 #solutionCramer{
+	height: 60%;
+	width: 100%;
+	position: absolute;
+	top:120px;
+	z-index:-6;font-family: font2;
+	font-size: 22px;
+	color: white;
+	display: flex;
+	align-items: center;justify-content: center;
+	opacity: 0;
+}
+#card2 #solutionCramer #deltPr{position: relative;top: 0;}
+#card2 #solutionCramer #sltnCramer1{margin: 0;margin-right: 20px;} 
+#card2 #solutionCramer #deltPr #dtrmn1{display: flex;flex-direction: row;padding-bottom: 10px;border-right: solid 1px white;border-left: solid 1px white;margin-bottom: 2px}
+#card2 #solutionCramer  #deltPr  div div div p{height: 20px;width: 20px;margin: 0}
+
+#card2 .sltn{
+	font-size: 18px;
+	font-weight: 900;
+	border-bottom: solid 2px white;
+	margin: 10px;
+	margin-bottom:10px;
+}
+
+
+/*********CARD3***********/
+#card3 .face p{
+	color: white;font-family: font1;font-weight: 500;letter-spacing: 2px;text-align: center;
+}
+#card3 .back{
+}
+/**********PANNEAU PUBLICITAIRE*************/
+.calque{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+}
+#panneauPub{
+	position: absolute;
+	opacity: 0;width: 400px;
+	height: 60%
+}
+/*#moncalque1,#moncalque2,#moncalque3,#moncalque4{
+}*/
+#moncalque1{
+	position: absolute;
+	left: -500px;
+	z-index: 4;
+	transform: translate(40px,-40px);
+	background-image: url("../Outim/Image/canal-2.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -150px;
+}
+#moncalque2{
+	position: absolute;
+	z-index: 3;
+	left: -100px;
+	transform: translate(20px,-20px);
+	background-image: url("../Outim/Image/iphon.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -150px;
+}
+#moncalque3{
+	position: absolute;
+	z-index: 2;
+	right: -250px;
+	transform: translate(5px,-15px);
+	background-image: url("../Outim/Image/télécharger.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-size: 100% 100%;
+}
+#moncalque4{
+	position: absolute;
+	z-index: 1;
+	right:  -500px;
+	transform: translate(-10px,-10px);
+	background-image: url("../Outim/Image/iphon.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -200px
+}
+
+#next,#prev{
+	cursor: pointer;
+padding: 10px 20px;
+	border-radius: 10px;
+	color: white
+	background-color: rgb(28 27 33);
+	border: none;
+	font-family: font1;
+	font-weight: 900;
+	letter-spacing: 2px;
+	box-shadow:2px 2px 5px rgba(0,0,0,.7);
+}
+
+
+
+/*************************/
+button#retour1,button#retour2,button#retour3{
+	cursor: pointer;
+	display: none;
+	opacity: 0;
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: white;
+	position: relative;
+	left: -200px;
+	background-color: rgb(28 27 33);
+	border: none;
+	font-family: font1;
+	font-weight: 900;
+	letter-spacing: 2px;
+	box-shadow:2px 2px 5px rgba(0,0,0,.7);
+}
+/**********************************/
+@media (max-width: 700px){
+	#card1,#card2,#card3{
+		margin-top: 20vh;
+		margin-bottom: 0%;
+	}
+	#card3{
+		margin-bottom: 20vh;
+	}
+}
+/***********ANIMATION*************/
+.added{
+	transform: rotateY(180deg);
+}
+.added1{
+	animation: added1 2s forwards cubic-bezier(0.48, 0.43, 0.29, 1.4);
+}
+@keyframes added1{
+	from{
+		width: 300px;
+		height: 400px;
+	}
+	to{width: 500px;
+	height: 500px;}
+}
+.added2{
+	animation: added2 2s forwards cubic-bezier(0.48, 0.43, 0.29, 1.4);
+}
+@keyframes added2{
+	from{
+		width: 300px;
+		height: 400px;
+	}
+	to{width: 600px;
+	height: 600px;}
+}
+.animOfCard1{
+	animation: crd1 1s;
+}
+.animOfCard2{
+	animation: opct 1s,plus 1s;
+}
+.animOfCard3{
+	animation: opct 1s;
+}
+@keyframes crd3{
+
+}
+@keyframes opct{
+	from{
+		opacity: 1;
+		width: 300px;
+		height: 400px;
+		top: 0;
+		left: 0;
+	}
+	to{
+		opacity: 0;
+		width:0;
+		height: 0;
+		top: 200px;
+		left: 500px;
+	}
+}
+@keyframes plus{
+	from{
+		left: 0;
+	}
+	to{
+		left: -500px;
+	}
+}
+@keyframes crd1{
+	from{
+		opacity: 1;
+		width: 300px;
+		height: 400px;
+		top: 0;
+		left: 0;
+	}
+	to{
+		opacity: 0;
+		width:0;
+		height: 0;
+		top: 200px;
+		left: -500px;
+	}
+}
+
+
+.animationBtn1{
+	animation: anmtBtn1 1s forwards;
+}
+
+@keyframes anmtBtn1{
+	from{
+		height: 72px;
+		position: relative;
+		top: 0px;
+		background-color: #0df;
+}
+	to{
+		height: 8px;
+		position: relative;
+		top:200px;
+		background-color: #0df;
+		width: 85%;
+}
+}
+.anm{animation-delay: .7s;}
+
+.anm2{animation-delay: 5s;}
+.anm1{
+	animation: anm1 .7s forwards; 
+}@keyframes anm1{
+	from{
+		width: 75%;
+		top: 0;
+	}
+	to{
+		width: 85%;
+		top: -170px;
+	}
+}
+
+
+
+
+
+
+
+@font-face{
+	font-family: font1;
+	src:url("../Outim/Font/AnkeHand.ttf");
+}
+
+@font-face{
+	font-family: font2;
+	src:url("../Outim/Font/Montserrat.ttf");
+}
+
+
+.fra{
+	animation: animé 5s;
+}
+
+@keyframes animé{
+	from{
+		left: 0;
+	}
+	to{
+		left: 250px;
+	}
+}
