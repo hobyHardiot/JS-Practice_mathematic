@@ -1,9 +1,6 @@
 # JS-Practice_mathematic
 Equation second degree, cramer , slideshow pane
 
-
-# JS-Practice_mathematic
-
 This project is a JavaScript practice with three main features:
 
 1. Quadratic Equation Solver: This program solves quadratic equations using Cramer's method. It handles equations with two unknowns to provide the solutions.
