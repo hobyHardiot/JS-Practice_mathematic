@@ -15,7 +15,7 @@ This project is a JavaScript practice with three main features:
 ## How to Use the Project
 
 1. Clone the repository to your local machine.
-2. Open the index.html file in your web browser to access the web page.
+2. Open the index12.html file in your web browser to access the web page.
 3. Follow the instructions on the page to use the different features of the project.
 
 ## Usage Examples
